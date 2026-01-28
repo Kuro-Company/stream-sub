@@ -25,7 +25,6 @@ interface LiveStatus {
 async function getLiveStatus(id: string): Promise<LiveStatus> {
     try {
         const response = await fetch(`https://www.youtube.com/channel/${id}/live`);
-        console.log(response.url);
         const html = await response.text();
 
         const data = extractInitialPlayerResponse(html);
